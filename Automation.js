@@ -83,8 +83,8 @@ async function handlePage(browser, page) {
         //     return atag.getAttribute("href");
         // });
 
-        // let urls = atags.map(atag => atag.getAttribute(href));
-        // return urls;
+        let urls = atags.map(atag => atag.getAttribute(href));
+        return urls;
         return atags.map(atag => atag.getAttribute(href));
     });
 
