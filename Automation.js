@@ -1,8 +1,3 @@
-// node AutomationScript.js --url="https://www.hackerrank.com" --config=config.json
-
-// npm init -y
-// npm install puppeteer
-// npm install minimist
 
 let minimist = require("minimist");
 let puppeteer = require("puppeteer");
@@ -39,7 +34,7 @@ async function run() {
     await page.waitForSelector("a[href='https://www.hackerrank.com/login']");
     await page.click("a[href='https://www.hackerrank.com/login']");
 
-    // type userid
+    // provide username
     await page.waitForSelector("input[name='username']");
     await page.type("input[name='username']", configJSO.userid, { delay: 50 });
 
@@ -74,7 +69,7 @@ async function run() {
 }
 
 async function handlePage(browser, page) {
-    // do some code
+    // 
     await page.waitForSelector("a.backbone.block-center");
     let curls = await page.$$eval("a.backbone.block-center", function (atags) {
         // let urls = [];
